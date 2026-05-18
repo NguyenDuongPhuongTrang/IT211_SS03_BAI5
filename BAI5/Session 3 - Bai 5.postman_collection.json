@@ -1,0 +1,461 @@
+{
+  "info": {
+    "_postman_id": "b23fac11-32a4-4d1a-8f0a-7ddeb8c4a29b",
+    "name": "Session 3 - Bai 5",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51874648",
+    "_collection_link": "https://go.postman.co/collection/51874648-b23fac11-32a4-4d1a-8f0a-7ddeb8c4a29b?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get Books",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://1535170e-df39-4b2b-b000-eed4f0e7c26e.mock.pstmn.io/api/v1/books",
+          "protocol": "https",
+          "host": [
+            "1535170e-df39-4b2b-b000-eed4f0e7c26e",
+            "mock",
+            "pstmn",
+            "io"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "books"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Books",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "/api/v1/books",
+              "path": [
+                "api",
+                "v1",
+                "books"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "",
+          "header": [],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\r\n    \"id\":1,\r\n    \"title\":\"Tư duy ngược\",\r\n    \"author\":\"Sơn Bùi\",\r\n    \"year\":2026,\r\n    \"available\":true\r\n},\r\n{\r\n    \"id\":2,\r\n    \"title\":\"Tư duy xuôi\",\r\n    \"author\":\"Trí Công\",\r\n    \"year\":2026,\r\n    \"available\":false\r\n}"
+        }
+      ]
+    },
+    {
+      "name": "Find By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://1535170e-df39-4b2b-b000-eed4f0e7c26e.mock.pstmn.io/book/:id",
+          "protocol": "https",
+          "host": [
+            "1535170e-df39-4b2b-b000-eed4f0e7c26e",
+            "mock",
+            "pstmn",
+            "io"
+          ],
+          "path": [
+            "book",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "BookID 1",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "/api/v1/book/1",
+              "path": [
+                "api",
+                "v1",
+                "book",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "",
+          "header": [],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\r\n    \"id\":1,\r\n    \"title\":\"Tư duy ngược\",\r\n    \"author\":\"Sơn Bùi\",\r\n    \"year\":2026,\r\n    \"available\":true\r\n}"
+        },
+        {
+          "name": "NOT FOUND",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "/api/v1/book/3",
+              "path": [
+                "api",
+                "v1",
+                "book",
+                "3"
+              ]
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "_postman_previewlanguage": "",
+          "header": [],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": ""
+        }
+      ]
+    },
+    {
+      "name": "Test Find By ID",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://1535170e-df39-4b2b-b000-eed4f0e7c26e.mock.pstmn.io/api/v1/book/2",
+          "protocol": "https",
+          "host": [
+            "1535170e-df39-4b2b-b000-eed4f0e7c26e",
+            "mock",
+            "pstmn",
+            "io"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "book",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post Book",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "/api/v1/add-book",
+          "path": [
+            "api",
+            "v1",
+            "add-book"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Post Book",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "/api/v1/add-book",
+              "path": [
+                "api",
+                "v1",
+                "add-book"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "",
+          "header": [],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\r\n    \"id\":3,\r\n    \"title\":\"Tư duy\",\r\n    \"author\":\"Kiên\",\r\n    \"year\":2026,\r\n    \"available\":false\r\n}"
+        }
+      ]
+    },
+    {
+      "name": "Test Post Book",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\":3,\r\n    \"title\":\"Tư duy\",\r\n    \"author\":\"Kiên\",\r\n    \"year\":2026,\r\n    \"available\":false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://1535170e-df39-4b2b-b000-eed4f0e7c26e.mock.pstmn.io/api/v1/add-book",
+          "protocol": "https",
+          "host": [
+            "1535170e-df39-4b2b-b000-eed4f0e7c26e",
+            "mock",
+            "pstmn",
+            "io"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "add-book"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Book",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "/api/v1/books/:id",
+          "path": [
+            "api",
+            "v1",
+            "books",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Update Book",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\":1,\r\n    \"title\":\"Tư duy ngược\",\r\n    \"author\":\"Sơn Bùi\",\r\n    \"year\":2026,\r\n    \"available\":true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "/api/v1/books/1",
+              "path": [
+                "api",
+                "v1",
+                "books",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "",
+          "header": [],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\r\n    \"id\":1,\r\n    \"title\":\"Thái Sơn\",\r\n    \"author\":\"Sơn 00\",\r\n    \"year\":2026,\r\n    \"available\":true\r\n}"
+        }
+      ]
+    },
+    {
+      "name": "Test Update Book",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "https://1535170e-df39-4b2b-b000-eed4f0e7c26e.mock.pstmn.io/api/v1/books/1",
+          "protocol": "https",
+          "host": [
+            "1535170e-df39-4b2b-b000-eed4f0e7c26e",
+            "mock",
+            "pstmn",
+            "io"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "books",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Book",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "/api/v1/books/:id",
+          "path": [
+            "api",
+            "v1",
+            "books",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Delete Book",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "/api/v1/books/1",
+              "path": [
+                "api",
+                "v1",
+                "books",
+                "1"
+              ]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": "",
+          "header": [],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": ""
+        }
+      ]
+    },
+    {
+      "name": "Find By Author",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "/api/v1/books",
+          "path": [
+            "api",
+            "v1",
+            "books"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Find By Author",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "/api/v1/books?author=sonbui",
+              "path": [
+                "api",
+                "v1",
+                "books"
+              ],
+              "query": [
+                {
+                  "key": "author",
+                  "value": "sonbui"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "",
+          "header": [],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\r\n    \"id\":1,\r\n    \"title\":\"Tư duy ngược\",\r\n    \"author\":\"sonbui\",\r\n    \"year\":2026,\r\n    \"available\":true\r\n},"
+        }
+      ]
+    }
+  ]
+}
